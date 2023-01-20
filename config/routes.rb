@@ -28,9 +28,10 @@ Rails.application.routes.draw do
   delete 'restaurants/:id', to: 'restaurants#destroy', as: 'delete'
 
   # show create reviews
-  get 'reviews/new', to: 'reviews#new'
+  # get 'restaurants/:id/reviews/new', to: 'reviews#new'
 
-  # show create restaurant
-  get 'reviews/new', to: 'reviews#new'
+  resources :restaurants do
+    resources :reviews, only: [:new, :create]
+  end
 
 end

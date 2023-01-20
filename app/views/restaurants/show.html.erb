@@ -5,6 +5,14 @@
 <p>Phone Number: <%= @restaurant.phone_number %></p>
 <p>Rating: <%= @restaurant.category %></p>
 
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+<hr>
+
 <%= link_to "Remove this restaurant", delete_path(@restaurant.id),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
 
