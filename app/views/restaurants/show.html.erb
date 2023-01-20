@@ -1,0 +1,11 @@
+<h1>Info of Restaurant</h1>
+
+<p>Name: <%= @restaurant.name %></p>
+<p>Address: <%= @restaurant.address %></p>
+<p>Phone Number: <%= @restaurant.phone_number %></p>
+<p>Rating: <%= @restaurant.category %></p>
+
+<%= link_to "Remove this restaurant", delete_path(@restaurant.id),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+
+<%= link_to "Back to list", restaurants_path %>
